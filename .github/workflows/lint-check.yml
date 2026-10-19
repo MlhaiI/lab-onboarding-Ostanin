@@ -1,21 +1,21 @@
 name: Linter Check
 
 on:
-pull_request:
+  pull_request:
     branches: ["develop"]
 
 jobs:
-lint:
+  lint:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v3
 
      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
+       uses: actions/setup-python@v4
+       with:
          python-version: "3.10"
 
      - name: Install and run flake8
-        run: |
+       run: |
          pip install flake8
          flake8 .
